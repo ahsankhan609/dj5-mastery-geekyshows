@@ -16,7 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from app1 import views as ap1
+from app2 import views as ap2
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('app1/', ap1.index, name='app1-index'),
+    path('app1/about/', ap1.about, name='app1-about'),
+
+    path('app2/', ap2.index, name='app2-index'),
+    path('app2/about/', ap2.about, name='app2-about'),
 ]
