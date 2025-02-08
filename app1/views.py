@@ -9,4 +9,4 @@ def index(request):
 
 
 def about(request):
-    return HttpResponse("I am a python developer.")
+    return HttpResponse("I am a python developer.From app1")
