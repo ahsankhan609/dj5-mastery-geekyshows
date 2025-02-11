@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chalenges App</title>
+</head>
+<body>
+    <h1>Welcome to the Challeges App. {{greetings}}</h1>
+    
+    <h2>Variables</h2>
+    <ul>        
+        <li>{{guest1}}</li>
+        <li>{{guest2}}</li>
+        <li>{{guest3}}</li>
+        <p>Belongs to {{country}} and are {{designation}}</p>
+        <p>Description: {{description}}</p>
+    </ul>
+    <hr>
+    <h2>Filters</h2>
+    <p><b>Convert text to UPPER:</b> {{designation|upper}}</p>
+    <p><b>Truncate Words after N Words:</b> {{description|truncatewords:5}}</p>
+    <p><b>Chainning the Filters:</b> {{description|truncatewords:3|upper}}</p>
+    <p><b>First: Gets first item from a list.</b> {{description|first}}</p>
+    <p><b>add: Adds a value to the variable.</b> Our age is {{age|add:30}}</p>
+    <p><b>Current Date & Time:</b>{{dt|date:"M d Y h:i:s"}}</p>
+    <hr>
+    <h2>For Loop</h2>
+    <ol>
+        {% for linux_distro in linux_distros %}
+        <li>{{linux_distro}}</li>
+        {% endfor %}
+    </ol>
+    <hr>
+    <ol>
+        {% for linux_distro in linux_distros reversed%}
+        <li>{{linux_distro}}</li>
+        {% endfor %}
+    </ol>
+</body>
+</html>

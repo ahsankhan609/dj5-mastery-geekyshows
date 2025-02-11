@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound
+from datetime import datetime
 
 # Create your views here.
 
@@ -25,3 +26,27 @@ def requested_month(request, month):
         return HttpResponseNotFound("<h1>Month not Supported.</h1>")
 
     return HttpResponse(f"<h1>{challenge_month}</h1>")
+
+
+def home(request):
+
+    # Django By-Default Templates - showing how to display variables
+    greetings = "Hello, Good Morning"
+    country = "USA"
+    designation = "python developer"
+    guest_names = {
+        'guest1': 'John',
+        'guest2': 'Jane',
+        'guest3': 'Joe',
+        'greetings': greetings,
+        'country': country,
+        'designation': designation,
+        'description': 'We are python developer\'s. We live in USA.',
+        'age': 0,
+        'dt': datetime.now(),
+        'linux_distros': ['CentOS', 'Debian', 'Fedora', 'Ubuntu'],
+    }
+
+    # Django By-Default Templates - showing how to use Filters
+
+    return render(request, 'challenges/index.html', context=guest_names)
