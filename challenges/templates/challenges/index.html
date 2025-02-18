@@ -3,8 +3,12 @@
 {% load static %}
 
    
-    <link rel="stylesheet" type="text/css" href="{% static 'challanges/css/style.css' %}">
     <title>{% block title %}Chalenges App {% endblock %}</title>
+
+    {% block basecss %}
+    {{ block.super }} <!--This will help us to get both local and base css-->
+    <link rel="stylesheet" type="text/css" href="{% static 'challanges/css/style.css' %}">
+    {% endblock basecss %}
 
 {% block content %}
     <h1>Welcome to the Challeges App. {{greetings}}</h1>

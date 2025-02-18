@@ -31,9 +31,10 @@ def requested_month(request, month):
 def home(request):
 
     # Django By-Default Templates - showing how to display variables
-    greetings = "Hello, Good Morning"
-    country = "USA"
-    designation = "python developer"
+
+    greetings = "Hello, Good Morning"  # passing variable to context
+    country = "USA"  # passing variable to context
+    designation = "python developer"  # passing variable to context
     guest_names = {
         'guest1': 'John',
         'guest2': 'Jane',
@@ -44,6 +45,7 @@ def home(request):
         'description': 'We are python developer\'s. We live in USA.',
         'age': 0,
         'dt': datetime.now(),
+        # passing list to context
         'linux_distros': ['CentOS', 'Debian', 'Fedora', 'Ubuntu'],
     }
 
