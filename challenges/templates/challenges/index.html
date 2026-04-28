@@ -32,18 +32,22 @@
 <p><b>Truncate Words after N Words:</b> {{description|truncatewords:5}}</p>
 <p><b>Chainning the Filters:</b> {{description|truncatewords:3|upper}}</p>
 <p><b>First: Gets first item from a list.</b> {{description|first}}</p>
-<p><b>add: Adds a value to the variable.</b> Our age is {{age|add:30}}</p>
+<p>
+  <b>add: Adds a value to the variable.</b> Your age was {{ age }}, but after
+  adding, it is: {{age|add:30}}
+</p>
 <p><b>Current Date & Time:</b>{{dt|date:"M d Y h:i:s"}}</p>
 <hr />
-<h2>For Loop</h2>
+<h2>For Loop - Actual List</h2>
 <ol>
   {% for linux_distro in linux_distros %}
   <li>{{linux_distro}}</li>
   {% endfor %}
 </ol>
 <hr />
+<h2>For Loop - Actual List - Reversed</h2>
 <ol>
-  {% for linux_distro in linux_distros reversed%}
+  {% for linux_distro in linux_distros reversed %}
   <li>{{linux_distro}}</li>
   {% endfor %}
 </ol>

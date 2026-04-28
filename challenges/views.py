@@ -64,7 +64,7 @@ def home(request: HttpRequest) -> HttpResponse:
         'country': country,
         'designation': designation,
         'description': 'We are python developer\'s. We live in USA.',
-        'age': 0,
+        'age': 50,
         'dt': datetime.now(),
         # passing list to context
         'linux_distros': ['CentOS', 'Debian', 'Fedora', 'Ubuntu'],
